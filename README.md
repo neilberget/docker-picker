@@ -4,7 +4,9 @@ Docker Picker
 A set of small bash scripts to make it really easy to inspect, tail, or stop and destroy your running containers.
 
 If you run any of these scripts, vim will open with the result of running docker ps on your host.
-Hit enter on any of the lines and the result of running docker inspect, docker tail -f or docker stop and destroy will be run
+Hit enter on any of the lines and the result of running docker inspect, docker tail -f or docker stop and destroy will be run.
+
+<iframe src="http://showterm.io/77712814aec87c133ec52#fast" width="640" height="480"></iframe>
 
 dinspect
 ---
