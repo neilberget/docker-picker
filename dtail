@@ -1,0 +1,17 @@
+#!/bin/bash
+
+# Tail the logs of a docker container from a list
+
+set -e
+
+source ./picker.sh
+
+dtail() {
+  picker .tailthis, ID
+
+  local COMMAND="docker logs -f $ID"
+
+  eval $COMMAND
+}
+
+dtail
