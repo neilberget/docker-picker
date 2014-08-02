@@ -1,9 +1,9 @@
 Docker Picker
 ===
 
-A set of small bash scripts to make it really easy to inspect, tail, or stop and destroy your running containers.
+A set of small bash functions to make it really easy to inspect, tail, or stop and destroy your running containers.
 
-If you run any of these scripts, vim will open with the result of running docker ps on your host.
+When you run any of these, vim will open with the result of running docker ps on your host.
 Hit enter on any of the lines and the result of running docker inspect, docker tail -f or docker stop and destroy will be run.
 
 ![docker picker demo](https://raw.githubusercontent.com/neilberget/docker-picker/master/assets/docker-picker.gif)
@@ -20,7 +20,14 @@ dtail
 
     dtail
 
-Runs `docker tail -f <ID>` to follow the logs of the selected container
+Runs `docker tail -f <ID>` to follow the logs of the selected container.
+
+dattach
+---
+
+    dattach
+
+Runs `docker attach <ID>` on the selected container.
 
 ddestroy
 ---
@@ -29,6 +36,11 @@ ddestroy
 
 Runs `docker stop <ID> && docker rm <ID>` on the selected container.
 
+Installation
+---
+Add `source /PATH/TO/docker-picker.sh` in your `.bashrc` or `.bash_profile` and reload your shell.
+
+These functions will modify your history and save the actual invoked command as if you typed it rather than the shortcut.
 
 Shout out
 ---
