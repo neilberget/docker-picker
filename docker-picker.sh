@@ -1,7 +1,7 @@
 #!/bin/bash
 
 dtail() {
-  _picker .tailthis, ID
+  _picker ID
 
   local COMMAND="docker logs -f $ID"
 
@@ -10,7 +10,7 @@ dtail() {
 }
 
 dinspect() {
-  _picker .inspectthis, ID
+  _picker ID
 
   local COMMAND="docker inspect $ID"
 
@@ -19,7 +19,7 @@ dinspect() {
 }
 
 dattach() {
-  _picker .attachthis, ID
+  _picker ID
 
   local COMMAND="docker attach $ID"
 
@@ -29,7 +29,7 @@ dattach() {
 
 
 ddestroy() {
-  _picker .destroythis, ID
+  _picker ID
 
   local COMMAND="docker stop $ID && docker rm $ID"
 
@@ -41,7 +41,7 @@ ddestroy() {
 # and parse out the selected line's container id
 _picker() {
   # cleanup TARGET file
-  local TARGET=$HOME/$1
+  local TARGET=$HOME/.pickthis
   if [ -e "$TARGET" ]; then
     rm "$TARGET"
   fi
@@ -60,7 +60,7 @@ _picker() {
   fi
 
   # Get the container id out of the first column
-  local __resultvar=$2
+  local __resultvar=$1
   eval $__resultvar=`cut -f1 -d" " $TARGET`
 }
 
