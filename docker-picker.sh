@@ -9,6 +9,15 @@ dtail() {
   eval "history -s $COMMAND"
 }
 
+dlogs() {
+  _picker ID
+
+  local COMMAND="docker logs $ID"
+
+  eval $COMMAND
+  eval "history -s $COMMAND"
+}
+
 dinspect() {
   _picker ID
 

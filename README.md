@@ -20,7 +20,14 @@ dtail
 
     dtail
 
-Runs `docker tail -f <ID>` to follow the logs of the selected container.
+Runs `docker logs -f <ID>` to follow the logs of the selected container.
+
+dlogs
+---
+
+    dlogs
+
+Runs `docker logs <ID>` to print all the logs from a container.
 
 dattach
 ---
